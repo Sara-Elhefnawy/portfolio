@@ -141,7 +141,7 @@
       </div>
 
       <!-- Docker School Portal Project -->
-      <div
+      <!-- <div
         class="group bg-neutral-900/80 hover:bg-neutral-800/90 overflow-hidden flex flex-col rounded-2xl md:flex-row w-full border border-indigo-500/30"
       >
         <div class="flex flex-col justify-between p-8 md:w-2/3">
@@ -166,7 +166,6 @@
               A two-service ASP.NET MVC app fully containerized with Docker Compose. Students MVC handles CRUD operations with SQL Server, while Grades MVC communicates with Students service via HTTP. One command starts everything: <code class="bg-neutral-800 px-2 py-1 rounded text-sm">docker compose up --build</code>
             </p>
             
-            <!-- What I built -->
             <div class="mb-4">
               <h6 class="font-semibold text-white mb-2">What I built:</h6>
               <ul class="text-gray-300 space-y-1 text-sm">
@@ -177,13 +176,11 @@
               </ul>
             </div>
 
-            <!-- How containers talk -->
             <div class="mb-4">
               <h6 class="font-semibold text-white mb-2">How containers talk:</h6>
               <p class="text-gray-300 text-sm">Grades app calls <code class="bg-neutral-800 px-2 py-1 rounded text-xs">http://students-mvc:80/api/students</code> using Docker service names. No hardcoded IPs!</p>
             </div>
 
-            <!-- Docker concepts -->
             <div class="mb-4">
               <h6 class="font-semibold text-white mb-2">Docker concepts I used:</h6>
               <div class="flex flex-wrap gap-2">
@@ -228,10 +225,10 @@
             />
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- GameZone Project (backend MVC) -->
-      <div
+      <!-- <div
         class="group bg-neutral-900/80 hover:bg-neutral-800/90 overflow-hidden flex flex-col rounded-2xl md:flex-row w-full"
       >
         <div class="flex flex-col justify-between p-8 md:w-2/3">
@@ -284,6 +281,348 @@
               class="relative w-48 h-48 object-cover rounded-xl shadow-2xl z-10"
               src="./Projects/GameZone.png"
               alt="GameZone Project"
+            />
+          </div>
+        </div>
+      </div> -->
+
+      <!-- ============================ 1. ECommerce API ============================ -->
+      <div
+        class="group bg-neutral-900/80 hover:bg-neutral-800/90 overflow-hidden flex flex-col rounded-2xl md:flex-row w-full border border-indigo-500/30"
+      >
+        <div class="flex flex-col justify-between p-8 md:w-2/3">
+          <div>
+            <div class="flex items-center gap-4 mb-4">
+              <img class="w-12 h-12 object-cover rounded-lg" src="./Tools/DotNET.png" alt=".NET" />
+              <span class="px-3 py-1 bg-indigo-500/20 text-indigo-300 rounded-full text-sm font-medium"
+                >Backend .NET | Clean Architecture</span
+              >
+            </div>
+            <h5 class="mb-4 text-2xl md:text-3xl font-bold group-hover:text-indigo-300 transition-colors">
+              ECommerce API - Minimal APIs, CQRS &amp; Stripe
+            </h5>
+            <p class="text-gray-300 leading-relaxed mb-6">
+              A production-style e-commerce backend built with ASP.NET Core Minimal APIs and a vertical-slice,
+              CQRS architecture. Covers the full flow: catalog, cart, orders, email verification, password reset
+              and card payments with Stripe webhooks.
+            </p>
+      
+            <div class="mb-4">
+              <h6 class="font-semibold text-white mb-2">What I built:</h6>
+              <ul class="text-gray-300 space-y-1 text-sm">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400 text-xs"></i> Endpoints auto-registered through a reflection-based <code class="bg-neutral-800 px-1 rounded text-xs">IEndpoint</code> pattern, versioned with <code class="bg-neutral-800 px-1 rounded text-xs">ApiVersionSet</code></li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400 text-xs"></i> Pipeline behaviors for logging and FluentValidation, plus a unified <code class="bg-neutral-800 px-1 rounded text-xs">ApiResponse&lt;T&gt;</code> envelope</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400 text-xs"></i> Stripe payments: order moves Pending → Processing / PaymentFailed via webhook events</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400 text-xs"></i> HybridCache (in-memory + Redis) for cart data, with expiry policies set in appsettings</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400 text-xs"></i> Audit logging with an <code class="bg-neutral-800 px-1 rounded text-xs">IEndpointFilter</code> and Serilog writing to PostgreSQL</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400 text-xs"></i> Paginated product queries using the Specification pattern</li>
+              </ul>
+            </div>
+      
+            <div class="mb-4">
+              <h6 class="font-semibold text-white mb-2">Quality &amp; testing:</h6>
+              <p class="text-gray-300 text-sm">
+                Architecture tests (NetArchTest) enforce layer boundaries; integration tests use
+                WebApplicationFactory + Testcontainers; NBomber load tests.
+              </p>
+            </div>
+      
+            <div class="mb-4">
+              <h6 class="font-semibold text-white mb-2">Concepts I used:</h6>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">CQRS</span>
+                <span class="px-2 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Vertical Slice</span>
+                <span class="px-2 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Repository pattern</span>
+                <span class="px-2 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Webhooks</span>
+                <span class="px-2 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Distributed caching</span>
+              </div>
+            </div>
+      
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">ASP.NET Core</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Minimal APIs</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">EF Core</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">SQL Server</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Redis</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">PostgreSQL</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Stripe</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Serilog</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Cloudinary</span>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <a
+              href="https://ecommerce-sara.runasp.net/swagger"
+              target="_blank"
+              class="text-indigo-400 hover:text-indigo-300 text-sm font-medium flex items-center gap-2 cursor-pointer transition-colors"
+            >
+              <i class="fa-solid fa-eye"></i> Live API Docs
+            </a>
+            <a
+              href="https://github.com/Sara-Elhefnawy/ECommerce"
+              target="_blank"
+              class="text-gray-400 hover:text-gray-300 text-sm font-medium flex items-center gap-2 cursor-pointer transition-colors"
+            >
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/3 flex items-center justify-center p-8 relative">
+          <div class="relative group-hover:rotate-3 group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute -inset-4 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-2xl skew-x-6 group-hover:skew-x-3 transition-transform duration-500"></div>
+            <img
+              class="relative w-48 h-48 object-cover rounded-xl shadow-2xl z-10"
+              src="./Projects/ECommerceAPI.png"
+              alt="ECommerce API"
+            />
+          </div>
+        </div>
+      </div>
+      
+      <!-- ================= 2. SchoolPortal - Modular Monolith ================= -->
+      <div
+        class="group bg-neutral-900/80 hover:bg-neutral-800/90 overflow-hidden flex flex-col rounded-2xl md:flex-row w-full border border-emerald-500/30"
+      >
+        <div class="flex flex-col justify-between p-8 md:w-2/3">
+          <div>
+            <div class="flex items-center gap-4 mb-4">
+              <img class="w-12 h-12 object-cover rounded-lg" src="./Tools/DotNET.png" alt=".NET" />
+              <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-full text-sm font-medium"
+                >Backend .NET | Modular Monolith</span
+              >
+            </div>
+            <h5 class="mb-4 text-2xl md:text-3xl font-bold group-hover:text-emerald-300 transition-colors">
+              School Portal - Modular Monolith
+            </h5>
+            <p class="text-gray-300 leading-relaxed mb-6">
+              A rebuild of my two-app School Portal. The original was two separate apps talking over HTTP
+              ("accidental microservices"); this version merges them into one deployable with strict module
+              boundaries, so modules communicate through events instead of network calls.
+            </p>
+      
+            <div class="mb-4">
+              <h6 class="font-semibold text-white mb-2">What I built:</h6>
+              <ul class="text-gray-300 space-y-1 text-sm">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> Students, Grades, Attendance, Notifications and Identity modules, each with its own Domain / Application / Infrastructure projects</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> One PostgreSQL schema per module; EF Core for writes, Dapper only for GPA and ranking reports</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> Hand-built mediator in a SharedKernel, with cross-module domain events</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> Cookie auth with ASP.NET Core Identity, Admin / Teacher / Student roles, CSRF protection, email confirmation and password reset</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> Per-module health checks (<code class="bg-neutral-800 px-1 rounded text-xs">/health/live</code>, <code class="bg-neutral-800 px-1 rounded text-xs">/health/ready</code>)</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> Architecture tests that fail the build if a module reaches into another module's layers</li>
+              </ul>
+            </div>
+      
+            <div class="mb-4">
+              <h6 class="font-semibold text-white mb-2">Design decisions:</h6>
+              <p class="text-gray-300 text-sm">
+                Private constructors + Result-returning factory methods in the domain, soft deletes with
+                matching restore methods, and admin overrides as explicit named methods instead of boolean bypass flags.
+              </p>
+            </div>
+      
+            <div class="mb-4">
+              <h6 class="font-semibold text-white mb-2">Concepts I used:</h6>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Modular Monolith</span>
+                <span class="px-2 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">CQRS</span>
+                <span class="px-2 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Domain events</span>
+                <span class="px-2 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Result pattern</span>
+                <span class="px-2 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Role-based auth</span>
+              </div>
+            </div>
+      
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">ASP.NET Core</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Minimal APIs</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">EF Core</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Dapper</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">PostgreSQL</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Identity</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">NetArchTest</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Brevo</span>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <a
+              href="https://schoolportal-sara.runasp.net/"
+              target="_blank"
+              class="text-emerald-400 hover:text-emerald-300 text-sm font-medium flex items-center gap-2 cursor-pointer transition-colors"
+            >
+              <i class="fa-solid fa-eye"></i> Live
+            </a>
+            <a
+              href="https://github.com/Sara-Elhefnawy/SchoolPortal-ModularMonolithic"
+              target="_blank"
+              class="text-gray-400 hover:text-gray-300 text-sm font-medium flex items-center gap-2 cursor-pointer transition-colors"
+            >
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/3 flex items-center justify-center p-8 relative">
+          <div class="relative group-hover:-rotate-3 group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-2xl -skew-x-6 group-hover:-skew-x-3 transition-transform duration-500"></div>
+            <img
+              class="relative w-48 h-48 object-cover rounded-xl shadow-2xl z-10"
+              src="./Projects/SchoolPortal.png"
+              alt="School Portal Modular Monolith"
+            />
+          </div>
+        </div>
+      </div>
+      
+      <!-- ============================ 3. Gym System (MVC) ============================ -->
+      <div
+        class="group bg-neutral-900/80 hover:bg-neutral-800/90 overflow-hidden flex flex-col rounded-2xl md:flex-row w-full border border-orange-500/30"
+      >
+        <div class="flex flex-col justify-between p-8 md:w-2/3">
+          <div>
+            <div class="flex items-center gap-4 mb-4">
+              <img class="w-12 h-12 object-cover rounded-lg" src="./Tools/mvcc.png" alt="ASP.NET MVC" />
+              <span class="px-3 py-1 bg-orange-500/20 text-orange-300 rounded-full text-sm font-medium"
+                >Backend .NET | N-Tier MVC</span
+              >
+            </div>
+            <h5 class="mb-4 text-2xl md:text-3xl font-bold group-hover:text-orange-300 transition-colors">
+              Gym System - ASP.NET Core MVC
+            </h5>
+            <p class="text-gray-300 leading-relaxed mb-6">
+              A gym management app for members, plans, trainers and session bookings, built as an N-Tier
+              solution (Domain, Infrastructure, UI) with cross-cutting concerns like soft delete and auditing
+              handled automatically at the database layer.
+            </p>
+      
+            <div class="mb-4">
+              <h6 class="font-semibold text-white mb-2">What I built:</h6>
+              <ul class="text-gray-300 space-y-1 text-sm">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-400 text-xs"></i> Full CRUD for members, plans, trainers and bookings with EF Core + SQL Server</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-400 text-xs"></i> Soft delete and audit fields applied through EF Core <code class="bg-neutral-800 px-1 rounded text-xs">SaveChanges</code> interceptors</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-400 text-xs"></i> Repository + Unit of Work so every write goes through one transaction boundary</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-400 text-xs"></i> Owned entity types (e.g. <code class="bg-neutral-800 px-1 rounded text-xs">Address</code>) and Mapster for entity ↔ view-model mapping</li>
+              </ul>
+            </div>
+      
+            <div class="mb-4">
+              <h6 class="font-semibold text-white mb-2">Concepts I used:</h6>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">N-Tier architecture</span>
+                <span class="px-2 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Unit of Work</span>
+                <span class="px-2 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">EF Core interceptors</span>
+                <span class="px-2 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Soft delete</span>
+              </div>
+            </div>
+      
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">ASP.NET Core MVC</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Entity Framework Core</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">SQL Server</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Mapster</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Razor Views</span>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <a
+              href="https://gymsystem-sara.runasp.net/"
+              target="_blank"
+              class="text-orange-400 hover:text-orange-300 text-sm font-medium flex items-center gap-2 cursor-pointer transition-colors"
+            >
+              <i class="fa-solid fa-eye"></i> Live
+            </a>
+            <a
+              href="https://github.com/Sara-Elhefnawy/GymSystem_NTierArchitecture"
+              target="_blank"
+              class="text-gray-400 hover:text-gray-300 text-sm font-medium flex items-center gap-2 cursor-pointer transition-colors"
+            >
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/3 flex items-center justify-center p-8 relative">
+          <div class="relative group-hover:rotate-3 group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute -inset-4 bg-gradient-to-r from-orange-500/20 to-amber-500/20 rounded-2xl skew-x-6 group-hover:skew-x-3 transition-transform duration-500"></div>
+            <img
+              class="relative w-48 h-48 object-cover rounded-xl shadow-2xl z-10"
+              src="./Projects/GymSystem.png"
+              alt="Gym System"
+            />
+          </div>
+        </div>
+      </div>
+      
+      <!-- ======================= 4. Library System - Test Suite ======================= -->
+      <div
+        class="group bg-neutral-900/80 hover:bg-neutral-800/90 overflow-hidden flex flex-col rounded-2xl md:flex-row w-full border border-sky-500/30"
+      >
+        <div class="flex flex-col justify-between p-8 md:w-2/3">
+          <div>
+            <div class="flex items-center gap-4 mb-4">
+              <img class="w-12 h-12 object-cover rounded-lg" src="./Tools/DotNET.png" alt=".NET" />
+              <span class="px-3 py-1 bg-sky-500/20 text-sky-300 rounded-full text-sm font-medium"
+                >Backend .NET | Testing</span
+              >
+            </div>
+            <h5 class="mb-4 text-2xl md:text-3xl font-bold group-hover:text-sky-300 transition-colors">
+              Library System - Integration &amp; Load Tests
+            </h5>
+            <p class="text-gray-300 leading-relaxed mb-6">
+              A test suite for a Library Management API that runs against a real SQL Server in a container,
+              not a mock, so the tests catch the problems that only show up with a real database:
+              migrations, serialization and query translation.
+            </p>
+      
+            <div class="mb-4">
+              <h6 class="font-semibold text-white mb-2">What I built:</h6>
+              <ul class="text-gray-300 space-y-1 text-sm">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400 text-xs"></i> Integration tests with xUnit + <code class="bg-neutral-800 px-1 rounded text-xs">WebApplicationFactory</code> hitting the real HTTP pipeline</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400 text-xs"></i> Testcontainers spins up a disposable SQL Server per test run, so no manual DB setup</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400 text-xs"></i> NBomber load scenarios measuring throughput and latency under concurrent users</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400 text-xs"></i> One shared <code class="bg-neutral-800 px-1 rounded text-xs">LibraryDataSeeder</code> feeding both integration and load tests, so they use identical data</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400 text-xs"></i> Readable assertions with Shouldly</li>
+              </ul>
+            </div>
+      
+            <div class="mb-4">
+              <h6 class="font-semibold text-white mb-2">Problems I solved:</h6>
+              <p class="text-gray-300 text-sm">
+                Container startup and Docker issues, EF Core migrations running inside the test host, and
+                circular JSON serialization in API responses.
+              </p>
+            </div>
+      
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">xUnit</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">WebApplicationFactory</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Testcontainers</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">NBomber</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Shouldly</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">SQL Server</span>
+              <span class="px-3 py-1 bg-neutral-800 text-gray-300 rounded-full text-xs">Docker</span>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <a
+              href="https://sara-library.runasp.net/swagger"
+              target="_blank"
+              class="text-sky-400 hover:text-sky-300 text-sm font-medium flex items-center gap-2 cursor-pointer transition-colors"
+            >
+              <i class="fa-solid fa-eye"></i> Live
+            </a>
+            <a
+              href="https://github.com/Sara-Elhefnawy/Library-System-API-Testing"
+              target="_blank"
+              class="text-gray-400 hover:text-gray-300 text-sm font-medium flex items-center gap-2 cursor-pointer transition-colors"
+            >
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/3 flex items-center justify-center p-8 relative">
+          <div class="relative group-hover:-rotate-3 group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute -inset-4 bg-gradient-to-r from-sky-500/20 to-blue-500/20 rounded-2xl -skew-x-6 group-hover:-skew-x-3 transition-transform duration-500"></div>
+            <img
+              class="relative w-48 h-48 object-cover rounded-xl shadow-2xl z-10"
+              src="./Projects/LibrarySystem.png"
+              alt="Library System Tests"
             />
           </div>
         </div>
